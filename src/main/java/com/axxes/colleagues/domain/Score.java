@@ -1,8 +1,12 @@
 package com.axxes.colleagues.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Score {
@@ -11,6 +15,10 @@ public class Score {
     private Long id;
     private Long amount;
     private String timestamp;
+    @ManyToOne
+    @JsonBackReference
+    @JoinColumn(name = "userId", nullable = false)
+    private User user;
 
     public Long getAmount() {
         return amount;
