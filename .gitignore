@@ -3,6 +3,7 @@
 /.idea
 /bin/
 *.iml
+*.xml
 .classpath
 .project
 .settings/
