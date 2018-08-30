@@ -9,19 +9,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
 
-@RestController("/users")
+@RestController
 public class UserController {
 
+    private final UserService userService;
+
     @Autowired
-    private UserService userService;
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
 
-    @GetMapping
+    @GetMapping("/users")
     public Iterable<User> getAll() {
         return userService.findAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/users/{id}")
     public Optional<User> get(@PathVariable("id") long id) {
         return userService.findById(id);
     }

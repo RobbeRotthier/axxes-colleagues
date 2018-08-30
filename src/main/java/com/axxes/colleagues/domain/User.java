@@ -16,7 +16,7 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<Score> scores;
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne
     @MapsId
     private Picture picture;
 

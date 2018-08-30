@@ -5,12 +5,12 @@ import com.axxes.colleagues.service.ScoreService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController("/scores")
+@RestController
 public class ScoreController {
 
     private ScoreService scoreService;
 
-    @GetMapping
+    @GetMapping("/scores")
     public Iterable<Score> getScores() {
         return scoreService.findAll();
     }

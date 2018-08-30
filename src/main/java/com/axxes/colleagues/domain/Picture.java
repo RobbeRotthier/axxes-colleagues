@@ -2,6 +2,7 @@ package com.axxes.colleagues.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Picture {
@@ -10,6 +11,7 @@ public class Picture {
     private long id;
     private String name;
     private byte[] content;
+    @OneToOne
     private User user;
 
     public String getName() {
