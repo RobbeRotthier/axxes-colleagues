@@ -1,6 +1,7 @@
 package com.axxes.colleagues.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
@@ -8,6 +9,7 @@ import javax.persistence.OneToOne;
 public class Picture {
 
     @Id
+    @GeneratedValue
     private long id;
     private String name;
     private byte[] content;

@@ -3,15 +3,13 @@ package com.axxes.colleagues.domain;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Score {
 
     @Id
+    @GeneratedValue
     private Long id;
     private Long amount;
     private String timestamp;

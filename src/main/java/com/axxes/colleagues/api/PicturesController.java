@@ -1,6 +1,7 @@
 package com.axxes.colleagues.api;
 
 import com.axxes.colleagues.domain.Picture;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,9 +12,9 @@ import java.util.List;
 public class PicturesController {
 
     @GetMapping("/pictures")
-    public List<Picture> getPictures() {
+    public ResponseEntity<List<Picture>> getPictures() {
         //return list of 80 pictures
 
-        return Collections.emptyList();
+        return ResponseEntity.ok(Collections.emptyList());
     }
 }

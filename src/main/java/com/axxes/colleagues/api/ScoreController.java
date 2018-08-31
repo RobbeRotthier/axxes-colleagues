@@ -2,6 +2,7 @@ package com.axxes.colleagues.api;
 
 import com.axxes.colleagues.domain.Score;
 import com.axxes.colleagues.service.ScoreService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,7 +12,7 @@ public class ScoreController {
     private ScoreService scoreService;
 
     @GetMapping("/scores")
-    public Iterable<Score> getScores() {
-        return scoreService.findAll();
+    public ResponseEntity<Iterable<Score>> getScores() {
+        return ResponseEntity.ok(scoreService.findAll());
     }
 }
